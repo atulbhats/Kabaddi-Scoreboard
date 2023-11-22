@@ -40,7 +40,7 @@
 		</script>
 		
 </head>
-<body class="" style="height: 100vh; font-family: Rajdhani, Titillium, &quot;Titillium Web&quot;, Arial, sans-serif; overflow: hidden;">
+<body class="" style="height: 100vh; font-family: Rajdhani, Titillium, &quot;Titillium Web&quot;, Arial, sans-serif;">
 	<div class="raid" style="position: absolute;width: 30%;background: #aaa;margin: 0 auto;left: 35%;min-height: 250px;text-align: center;font-weight: bolder;border-radius: 0 0 20px 20px;">
 		<span class="rsec" style="font-size: 236px;font-family: courier;text-align: center;">30</span>
 		<span style="font-size: 64px;position: absolute;bottom: 0;left: 0;width: 100%;text-align: center;color: #fff;">Seconds</span>
@@ -72,7 +72,7 @@
 		</div>
 	</div>
 	<div class="reset"></div>
-	<div style="position: absolute;bottom: 10px;padding: 15px;font-size: 32px;border-radius: 50px;text-align: center;width: 50%;left: 25%;border: 1px solid;" class="eventName"></div>
+	<div style="position: absolute;bottom: 10px;padding: 15px;font-size: 32px;border-radius: 50px;text-align: center;width: 50%;left: 25%;border: 1px solid;" class="eventName">That Kabaddi Tournament</div>
 	<!--<div style="position: absolute;right: 0;bottom: 0;padding: 25px;font-size: 28px;color: #aaa;font-family: Segoe UI, sans-serif;">Developed by <b style="font-family: Segoe UI, sans-serif;">AtulBhatS</b></div>-->
 	<script>
 		$(document).ready(function(){
@@ -270,7 +270,7 @@
 	
 	<a class="waves-effect waves-light btn modal-trigger" href="#settings" style="background: none;box-shadow: none;font-size: 24px;padding: 15px;height: auto;position: absolute;right: 10px;filter: grayscale(1);opacity: 0.5;">⚙️</a>
 
-	<div id="settings" class="modal">
+	<div id="settings" class="modal" tabindex="0" style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
     	<div class="modal-content" style="padding-bottom: 5px;">
       		<h4>Info &amp; Settings</h4>
       		<div class="contents" style="padding: 0 25px;font-family: Segoe UI, Tahoma, Sans-Serif !important;font-size: 24px;font-weight: 400!important;">
@@ -285,7 +285,7 @@
   				<p style="display: inline;">Interface </p><div class="switch" style="display: inline;">
 				    <label>
 				      Light
-				      <input type="checkbox" disabled>
+				      <input type="checkbox" disabled="">
 				      <span class="lever"></span>
 				      Dark
 				    </label>
@@ -307,23 +307,25 @@
       		</div>
     	</div>
     	<div class="modal-footer" style="padding-bottom: 25px;height: auto;">
+      		<span class="small" style="font-size: 10px;display: inline-block;position: absolute;left: 40px;opacity: 0.5;bottom: 30px;">Licensed under <a href="http://opensource.org/licenses/mit-license.html">MIT License</a></span>
       		<a href="#!" class="modal-close waves-effect waves-green btn-flat" style="background: transparent;font-size: 28px;background: #eee;border-radius: 50px;min-width: 150px;text-align: center;padding: 5px 10px;height: auto;margin: 0;">💾</a>
     	</div>
-  	<style>
-		.sc{
-			cursor: pointer;
-		}
+	  	<style>
+			.sc{
+				cursor: pointer;
+			}
 
-		*::selection{
-			background: transparent;
-		}
+			*::selection{
+				background: transparent;
+			}
 
-		*, .modal h4, .modal .h5,.modal strong{
-			font-family: 'Rajdhani','Titillium', 'Titillium Web', 'Monospace', sans-serif!important;
-		}
+			*, .modal h4, .modal .h5,.modal strong{
+				font-family: 'Rajdhani','Titillium', 'Titillium Web', 'Monospace', sans-serif!important;
+			}
 
-		.modal *{
-			font-family: Open Sans, Segoe UI, sans-serif!important;
-		}
-	</style>
+			.modal *{
+				font-family: Open Sans, Segoe UI, sans-serif!important;
+			}
+		</style>
+	</div>
 </body></html>
