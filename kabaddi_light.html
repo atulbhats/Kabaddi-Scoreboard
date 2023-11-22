@@ -1,0 +1,303 @@
+<html><head>
+<meta charset="UTF-8">
+<title>Kabaddi ScoreBoard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@700&amp;display=swap" rel="stylesheet">
+    <!-- Powered by JQuery and MaterializeCss -->
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function(){document.body.innerHTML += atob('PGRpdiBzdHlsZT0icG9zaXRpb246IGFic29sdXRlO3JpZ2h0OiAwO2JvdHRvbTogMDtwYWRkaW5nOiAyNXB4O2ZvbnQtc2l6ZTogMjhweDtjb2xvcjogI2FhYTtmb250LWZhbWlseTogU2Vnb2UgVUksIHNhbnMtc2VyaWY7Ij5EZXZlbG9wZWQgYnkgPGIgc3R5bGU9ImZvbnQtZmFtaWx5OiBTZWdvZSBVSSwgc2Fucy1zZXJpZjsiPjxhIGhyZWY9Imh0dHBzOi8vYXR1bGJoYXRzLmNvbSIgc3R5bGU9InRleHQtZGVjb3JhdGlvbjpub25lO2NvbG9yOmluaGVyaXQ7Ij5BdHVsQmhhdFM8L2E+PC9iPjwvZGl2Pg==');});	
+	</script>
+</head>
+<body style="height: 100vh; font-family: Rajdhani, Titillium, &quot;Titillium Web&quot;, Arial, sans-serif;">
+	<div class="raid" style="position: absolute;width: 30%;background: #aaa;margin: 0 auto;left: 35%;min-height: 250px;text-align: center;font-weight: bolder;border-radius: 0 0 20px 20px;">
+		<span class="rsec" style="font-size: 236px;font-family: courier;text-align: center;">30</span>
+		<span style="font-size: 64px;position: absolute;bottom: 0;left: 0;width: 100%;text-align: center;color: #fff;">Seconds</span>
+    <a class="toggle raid" style="cursor: pointer;position: absolute;bottom: -5px;font-size: 64px;right: -4px;filter: grayscale(1);">⏯️</a>
+    <a class="reset raid" style="cursor: pointer;position: absolute;bottom: -5px;font-size: 64px;left: -4px;filter: grayscale(1);">🔄</a>
+    <span class="raidrunning" style="position: absolute;top: 10px;right: 10px;display: none;filter: invert(1);">⏳</span>
+	</div>
+	<div class="score1" style="position: absolute;top: 250px;width: 30%;border: 1px solid #aaa;border-radius: 20px;text-transform: uppercase;">
+		<span class="b" style="position: absolute; top: 180px; font-size: 45px; text-align: right; width: 100%; color: green; font-weight: bolder; padding: 0px 15px; display: none;">Bonus</span>
+		<input value="IND" type="text" style="font-size: 128px;height: 164px;padding: 25px;text-align: center;border: 0;background: #fafafa;width: 90%;border-radius: 24px;margin: 0.5%;font-weight: bolder;text-transform: uppercase;">
+		<span class="sc" style="font-size: 256px;text-align: center;display: block;font-weight: bolder;">00</span>
+		<a class="btn bonus" style="position: absolute;bottom: 6px;background: transparent;box-shadow: none;font-size: 32px;color: grey;border-radius: 50px;background: #efefef;padding: 4px;height: 46px;width: 46px;right: 7px;">B</a>
+	</div>
+	<div class="score2" style="position: absolute;top: 250px;width: 30%;border: 1px solid #aaa;border-radius: 20px;text-transform: uppercase;right: 0;">
+		<span class="b" style="position: absolute; top: 180px; font-size: 45px; text-align: right; width: 100%; color: green; font-weight: bolder; padding: 0px 15px; display: none;">Bonus</span>
+		<input value="IRN" type="text" style="font-size: 128px;height: 164px;padding: 25px;text-align: center;border: 0;background: #fafafa;width: 90%;border-radius: 24px;margin: 0.5%;font-weight: bolder;text-transform: uppercase;">
+		<span class="sc" style="font-size: 256px;text-align: center;display: block;font-weight: bolder;">00</span>
+		<a class="btn bonus" style="position: absolute;bottom: 6px;background: transparent;box-shadow: none;font-size: 32px;color: grey;border-radius: 50px;background: #efefef;padding: 4px;height: 46px;width: 46px;left: 7px;">B</a>
+	</div>
+	<div class="match" style="background: #ccc;width: 40%;left: 30%;position: absolute;top: 50%;background: #Efefef;height: 190px;">
+<span class="running" style="position: absolute;top: 10px;right: 10px;display: none;">⏳</span>
+    <input class="mm" style="font-size: 164px;position: absolute;left: 0;width: 47%;height: auto;text-align: right;border: 0;" value="00">
+		<span style="font-size: 127px;position: absolute;left: 47%;width: 50%;height: auto;color:#999;">:</span>
+		<input class="ss" style="font-size: 164px;position: absolute;right: 0;width: 50%;height: auto;text-align: left;border: 0;" value="00">
+		<div style="position: absolute;bottom: -50px;text-align: center;display: flex;left: 30%;">
+			<a class="btn reset match" style="background: transparent;box-shadow: none;font-size: 50px;filter: grayscale(1);">🔄</a>
+			<a class="btn pause match" style="background: transparent;box-shadow: none;font-size: 50px;filter: grayscale(1);">⏸️</a>
+			<a class="btn start match" style="background: transparent;box-shadow: none;font-size: 50px;filter: grayscale(1);">▶️</a>
+		</div>
+	</div>
+	<div class="reset"></div>
+	<div style="position: absolute;bottom: 10px;padding: 15px;font-size: 32px;border-radius: 50px;text-align: center;width: 50%;left: 25%;border: 1px solid;" class="eventName">That Kabaddi Tournament</div>
+	<!--<div style="position: absolute;right: 0;bottom: 0;padding: 25px;font-size: 28px;color: #aaa;font-family: Segoe UI, sans-serif;">Developed by <b style="font-family: Segoe UI, sans-serif;">AtulBhatS</b></div>-->
+	<script>
+		$(document).ready(function(){
+			$ss = 0;
+			$mm = 0;
+			$raidCounter = 1;
+			$rcounter = null;
+
+			$roundTime = 20;
+			$raidTime = 30;
+			$dark = false;
+			$eventName = "That Kabaddi Tournament";
+			$newRoundTime = null;
+			$newRaidTime = null;
+			$newEventName = '';
+
+			function getModalValues(){
+				$newRoundTime = $('.round.duration').val();
+				$newRaidTime = $('.raid.duration').val();
+				$newEventName = $('.event').val();
+			}
+
+			$('.modal-close').on('click',function(){
+				$newDark = $('#mySwitch').prop('checked');
+				getModalValues();
+				if($newRoundTime != null && parseInt($newRoundTime) != NaN){
+					if($newRoundTime != "" && parseInt($newRoundTime) != 0){
+						$roundTime = $newRoundTime;
+					}
+				}
+				if($newRaidTime != null && parseInt($newRaidTime) != NaN){
+					if($newRaidTime != "" && parseInt($newRaidTime) != 0){
+						$raidTime = $newRaidTime;
+					}
+				}
+				if($newEventName != null && parseInt($newEventName) != NaN){
+					if($newEventName != "" && parseInt($newEventName) != 0){
+						$eventName = $newEventName;
+					}
+				}
+				$('.eventName').text($eventName);
+				$('.mm').val($roundTime);
+				$('.rsec').text($raidTime);
+				 M.toast({html: 'Settings Saved'});
+				 //$('.modal').modal('close');
+			});
+
+			$('.eventName').text($eventName);
+
+			function toggleRaid(){
+				//alert($raidCounter);
+				if($raidCounter == 1){
+					clearInterval($rcounter);
+					$('.raidrunning').fadeOut();
+					$raidCounter = 0;
+				}
+				else{
+					runRaid();
+					$('.raidrunning').show();
+					$raidCounter = 1;
+				}
+			}
+
+			function runRaid(){
+				//alert('running raid');
+				$rs = parseInt($('.rsec').text());
+				if($rs > 0){
+					$rcounter = setInterval(function(){
+						$rs = $rs -1;
+						$('.rsec').text(($rs<10)?"0"+$rs:$rs);
+						if($rs == 0){
+							$('.b').hide();
+							clearInterval($rcounter);
+							$('.raidrunning').fadeOut();
+						}
+					},1000);
+				}
+			}
+
+			$matchTimer = '';
+			$runningMatch = 0;
+
+			$('.reset.raid').on('click',function(){
+				clearInterval($rcounter);
+				$('.raidrunning').fadeOut();
+				$('.b').hide();
+				$raidCounter = 0;
+				$('.rsec').text($raidTime);
+			});
+
+
+			$('.reset.raid').click();
+
+			$('.toggle.raid').on('click',function(){
+				toggleRaid();
+			});
+
+			$('.start.match').on('click',function(){
+				if($runningMatch == 0){
+					$matchTimer = setInterval(matchRun,1000);
+					$runningMatch =1;
+				}
+			});
+
+			$('.reset.match').on('click',function(){
+				matchReset();
+				clearInterval($matchTimer);
+				$runningMatch = 0;
+			});
+
+			$('.pause.match').on('click',function(){
+				$('.running').fadeOut();
+				clearInterval($matchTimer);
+				$runningMatch = 0;
+			});
+
+			$rMM = 0;
+
+			$('.match .mm,.match .ss').on('focus',function(){
+				$mm = $('.match .mm').val();
+				$ss = $('.match .ss').val();
+				$rMM = $mm+":"+$ss;
+			});
+
+			$('.match .mm,.match .ss').on('blur',function(){
+				$mm = $('.match .mm').val();
+				$ss = $('.match .ss').val();
+				if($rMM != $mm+":"+$ss){
+					$runningMatch = 0;
+				}
+			});
+
+
+			function matchRun(){
+				console.log('Running Match Timer');
+					$mm = parseInt($('.match').find('.mm').val());
+					$ss = parseInt($('.match').find('.ss').val());
+					if($mm > 0 || $ss > 0){
+						$runningMatch = 1;
+						$('.running').show();
+						$ss--;
+						if($ss == -1){
+							$ss = 59;
+							$mm--;
+						}
+						if($mm == -1){
+							matchReset();
+						}
+						$('.match').find('.ss').val(($ss < 10)?"0"+$ss:$ss);
+						$('.match').find('.mm').val(($mm < 10)?"0"+$mm:$mm);
+					}
+					else{
+						clearInterval($matchTimer);
+					}
+			}
+
+
+			function matchReset(){
+				$('.running').fadeOut();
+				clearInterval($matchTimer);
+				$('.match').find('.ss').val('00')
+				$('.match').find('.mm').val('00')
+			}
+
+
+			$('.sc').on('click',function(){
+				$score = 0;
+				$score = parseInt($(this).text())+1;
+				$(this).text(($score < 10)?"0"+$score:$score);
+			});
+
+			$('.sc').on('contextmenu',function(e){
+				e.preventDefault();
+				$score = 0;
+				$score = parseInt($(this).text())-1;
+				if($score > -1){
+					$(this).text(($score < 10)?"0"+$score:$score);
+				}
+			});
+
+
+
+			$('.b').hide();
+
+			$('.bonus').on('click',function(){
+				$(this).parent().find('.b').toggle();
+				$score = parseInt($(this).parent().find('.sc').text())+1;
+				$(this).parent().find('.sc').text(($score < 10)?"0"+$score:$score);
+			});
+
+			 $('.modal').modal();
+		});
+
+	</script>
+	
+	<a class="waves-effect waves-light btn modal-trigger" href="#settings" style="background: none;box-shadow: none;font-size: 24px;padding: 15px;height: auto;position: absolute;right: 10px;filter: grayscale(1);opacity: 0.5;">⚙️</a>
+
+	<div id="settings" class="modal" tabindex="0" style="z-index: 1003; display: none; opacity: 0; top: 4%; transform: scaleX(0.8) scaleY(0.8);">
+    	<div class="modal-content" style="padding-bottom: 5px;">
+      		<h4>Info &amp; Settings</h4>
+      		<div class="contents" style="padding: 0 25px;font-family: Segoe UI, Tahoma, Sans-Serif !important;font-size: 24px;font-weight: 400!important;">
+      			<h5 style="font-size: 28px;background: #ccc;padding: 5px 15px;margin: 0 -15px;">Info</h5>
+      			<ul style="font-size: 20px;font-family: Segoe UI, Tahoma, Sans-Serif !important;font-weight: 400;">
+      				<li style="font-family: Segoe UI, Tahoma, Sans-Serif !important;font-weight: 400;">🖱️ <strong>Left Click</strong> to Increase and <strong>Right Click</strong> to Decrease Points.</li>
+      				<li style="font-family: Segoe UI, Tahoma, Sans-Serif !important;font-weight: 400;">🔠 Edit Team Names by Clicking the Text and Edit.</li>
+      				<li style="font-family: Segoe UI, Tahoma, Sans-Serif !important;font-weight: 400;">♻️ <strong>Ctrl + R</strong> to Reset everything.</li>
+      			</ul>
+      			<hr>
+      			<h4>Settings</h4>
+  				<p style="display: inline;">Interface </p><div class="switch" style="display: inline;">
+				    <label>
+				      Light
+				      <input type="checkbox" disabled="">
+				      <span class="lever"></span>
+				      Dark
+				    </label>
+				  </div>&nbsp;&nbsp; <span style="color: #999;font-size: 12px;" class="red-text"> Coming Soon</span>
+				<p></p>
+				<p>
+					Round Duration 
+					<input type="text" class="round duration" style="display: inline;width: 64px;border: 0;background: #efefef;border-radius: 15px;border: none;text-align: center;">
+					<span style="color: #999;font-size: 12px;"> Minutes</span>
+				</p>
+				<p>
+					Raid Duration  
+					<input type="text" class="raid duration" style="display: inline;width: 64px;background: #efefef;border-radius: 15px;border: none;text-align: center;">
+					<span style="color: #999;font-size: 12px;">  Seconds</span>
+				</p>
+				<p>Event Name  
+					<input type="text" class="event" style="display: inline;width: 80%;background: #efefef;border-radius: 15px;border: none;">
+				</p>
+      		</div>
+    	</div>
+    	<div class="modal-footer" style="padding-bottom: 25px;height: auto;">
+      		<span class="small" style="font-size: 10px;display: inline-block;position: absolute;left: 40px;opacity: 0.5;bottom: 30px;">Licensed under <a href="http://opensource.org/licenses/mit-license.html">MIT License</a></span>
+      		<a href="#!" class="modal-close waves-effect waves-green btn-flat" style="background: transparent;font-size: 28px;background: #eee;border-radius: 50px;min-width: 150px;text-align: center;padding: 5px 10px;height: auto;margin: 0;">💾</a>
+    	</div>
+	  	<style>
+			.sc{
+				cursor: pointer;
+			}
+
+			*::selection{
+				background: transparent;
+			}
+
+			*, .modal h4, .modal .h5,.modal strong{
+				font-family: 'Rajdhani','Titillium', 'Titillium Web', 'Monospace', sans-serif!important;
+			}
+
+			.modal *{
+				font-family: Open Sans, Segoe UI, sans-serif!important;
+			}
+		</style>
+	</div>
+<div style="position: absolute;right: 0;bottom: 0;padding: 25px;font-size: 28px;color: #aaa;font-family: Segoe UI, sans-serif;">Developed by <b style="font-family: Segoe UI, sans-serif;"><a href="https://atulbhats.com" style="text-decoration:none;color:inherit;">AtulBhatS</a></b></div></body></html>
