@@ -160,6 +160,65 @@
 			.swtich{
 				cursor: pointer;
 			}
+
+			body.dark {
+			    background: #1c1c1c;
+			}
+
+			.dark .raid {
+			    background: #2c2c2c!important;
+			}
+
+			.dark .raid a {
+			    background: transparent!important;
+			}
+
+			.dark .score {
+			    border-color: #3c3c3c;
+			}
+
+			.dark .score input {
+			    background: #ffffff05!important;
+			}
+
+			.dark .toggle, .dark .swap {
+			    filter: grayscale(1) invert(0.2)!important;
+			}
+
+			.dark .match {
+			    background: #3c3c3c!important;
+			 }
+
+
+			.dark .match > div {
+			    background: transparent;
+			}
+
+			.dark .match > div > a {
+			    background: transparent!important;
+			}
+
+			.dark .match input {
+			    color: #fff;
+			}
+
+			.dark .match > span {
+			    color: #1c1c1c!important;
+			}
+
+			.dark .bonus {
+			    background: #3c3c3c;
+			}
+
+			.dark .event {
+			    border-color: #ccc!important;
+			    color: #fff;
+			}
+
+			.dark input.raid.duration, .dark input.event{
+				background: #efefef!important;
+				color:#000!important;
+			}
 		</style>
 </head>
 <body class="" style="height: 100vh; font-family: Rajdhani, Titillium, &quot;Titillium Web&quot;, Arial, sans-serif;">
@@ -182,7 +241,7 @@
 		<span class="sc">00</span>
 		<a class="btn bonus">B</a>
 	</div>
-	<a class="switch" style="
+	<a class="swap" style="
     position: absolute; left: 47%; font-size: 64px; font-weight: 900; filter: grayscale(1); top: 79%;">🔄</a>
 	<div class="match" style="background: #ccc;width: 40%;left: 30%;position: absolute;top: 50%;background: #Efefef;height: 190px;">
 <span class="running" style="position: absolute; top: 10px; right: 10px; display: none;">⏳</span>
@@ -224,7 +283,6 @@
 			}
 
 			$('.modal-close').on('click',function(){
-				$newDark = $('#mySwitch').prop('checked');
 				getModalValues();
 				if($newRoundTime != null && parseInt($newRoundTime) != NaN){
 					if($newRoundTime != "" && parseInt($newRoundTime) != 0){
@@ -285,7 +343,7 @@
 				}
 			}
 
-			$('.switch').on('click',function(){
+			$('.swap').on('click',function(){
 				$('body').find('.score.right').addClass('rtemp');
 				$('body').find('.score.right').removeClass('right');
 				$('body').find('.score.left').addClass('right');
@@ -415,9 +473,16 @@
 				$(this).parent().find('.sc').text(($score < 10)?"0"+$score:$score);
 			});
 
-			 $('.modal').modal();
+			$('.modal').modal();
 
-
+			$(".switch").find("input[type=checkbox]").on("change",function() {
+				if($('.switch').find('input').prop('checked')){
+					$('body').addClass('dark');
+				}
+				else{
+					$('body').removeClass('dark');
+				}
+			});
 		});
 
 	</script>
@@ -440,7 +505,7 @@
   				<p style="display: inline;">Interface </p><div class="switch" style="display: inline;">
 				    <label>
 				      Light
-				      <input type="checkbox" disabled="">
+				      <input type="checkbox">
 				      <span class="lever"></span>
 				      Dark
 				    </label>
