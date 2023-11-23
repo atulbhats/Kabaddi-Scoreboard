@@ -15,6 +15,8 @@ It's a pretty Simple Interface.
 
 ♻️ **Ctrl + R** to Reset everything.
 
+⌨️ **Enter** to Toggle Raid Timer and **Space** to Reset Raid Timer.
+
 The Duration of a Round and a Raid may be edited using the Settings.
 
 #### Info for Nerds
